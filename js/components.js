@@ -78,7 +78,7 @@
     if (!container) return;
 
     container.querySelector('a').addEventListener('click', function (e) {
-      e.preventDefault();
+     
       container.classList.toggle('active');
     });
 
