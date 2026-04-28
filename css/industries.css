@@ -1,0 +1,24 @@
+/* ── Industry section ───────────────────────────────────── */
+.industry-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.industry-section h2 {
+  color: var(--color-teal-light);
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+.industry-section p {
+  color: var(--color-dark);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0 0 1.5rem;
+}
+
+.industry-section p:last-child {
+  margin-bottom: 0;
+}

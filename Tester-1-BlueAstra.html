@@ -1,535 +1,237 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TCS Inspired Aqua Theme</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #25A4A4;
-      --secondary-color: #ffffff;
-      --dark-color: #333333;
-      --light-gray: #f5f5f5;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: var(--dark-color);
-      background-color: var(--secondary-color);
-    }
-
-    header {
-      background-color: #000000;
-      color: var(--secondary-color);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 2.5rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    nav {
-      position: relative;
-      display: flex;
-      justify-content: flex-start; /* Align items to the left */
-      align-items: center; /* Align items in one line */
-      width: 100%; /* Spread items across the full width */
-      gap: 0.5rem; /* Reduce space between items */
-    }
-
-    nav a {
-      flex: none; /* Allow items to take equal space */
-      text-align: center; /* Center-align text within each item */
-      color: var(--secondary-color);
-      margin: 0 0.5rem; /* Reduce horizontal margin */
-      text-decoration: none;
-      font-weight: 600;
-      position: relative;
-      text-transform: uppercase; /* Capitalize all header items */
-      transition: background 0.2s, color 0.2s;
-      border-bottom: 3px solid transparent;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    nav a:active,
-    nav a.active {
-      color: #fff !important;
-      background: #000 !important; /* Black background on click */
-      border-bottom: 3px solid #1F51FF;
-    }
-
-    .dropdown {
-      position: absolute;
-      display: none;
-      background-color: black; /* Aqua blue background */
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 0.5rem 0;
-      z-index: 1000;
-      display: grid; /* Use grid layout for columns */
-      grid-template-columns: 1fr 1fr 1fr 1fr; /* Four equal columns */
-      gap: 0.5rem; /* Space between columns */
-    }
-
-    .dropdown-container {
-      position: relative;
-    }
-
-    .dropdown-container .dropdown {
-      display: none;
-    }
-
-    .dropdown-container.active .dropdown {
-      display: grid; /* Show dropdown when active class is added */
-    }
-
-    nav a {
-      position: relative;
-      cursor: pointer;
-    }
-
-    .hero {
-      background: linear-gradient(to bottom, #000000 0%, var(--primary-color) 100%);
-      color: var(--secondary-color);
-      text-align: center;
-      padding: 4rem 2rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .hero button {
-      background-color: var(--secondary-color);
-      color: var(--primary-color);
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .hero button:hover {
-      background-color: #e0f7f7;
-    }
-
-    .section {
-      padding: 3rem 2rem;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background-color: var(--light-gray);
-      padding: 2rem;
-      border-radius: 8px;
-      transition: transform 0.3s;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border: 2px solid var(--primary-color);
-    }
-
-    footer {
-      background-color: var(--dark-color);
-      color: var(--secondary-color);
-      text-align: center;
-      padding: 2rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    footer a {
-      color: var(--primary-color);
-      margin: 0 0.5rem;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: #808080; /* Default text color */
-      text-decoration: none;
-      font-weight: 500;
-      text-transform: uppercase; /* Capitalize all dropdown menu items */
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .dropdown a:active,
-    .dropdown a.active {
-      text-decoration: none !important;
-    }
-
-    .dropdown-services {
-      position: absolute;
-      display: none;
-      background-color: black; /* Match dropdown background */
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 0.5rem 0;
-      z-index: 1000;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-      gap: 0.5rem;
-    }
-
-    .dropdown-services a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: #808080;
-      text-decoration: none;
-      font-weight: 500;
-      text-transform: uppercase;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .dropdown-services a:active,
-    .dropdown-services a.active {
-      text-decoration: none !important;
-    }
-
-    .dropdown-container-services {
-      position: relative;
-    }
-
-    .dropdown-container-services .dropdown-services {
-      display: none;
-    }
-
-    .dropdown-container-services.active .dropdown-services {
-      display: grid;
-    }
-  </style>
+  <title>Blue Astra Technologies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
-<body>
-  <header>
-    <div class="logo" style="display: flex; flex-direction: row; align-items: center; line-height: 1.1; margin-right: 1.5rem;">
-      <!-- Placeholder for tree logo image -->
-      <img src="images/tree-placeholder.svg" alt="Blue Astra Logo" style="height: 48px; width: 40px; margin-right: 10px;" />
-      <div style="width: 3px; height: 48px; background: #e3f1f6; border-radius: 1.5px; margin-right: 14px;"></div>
-      <div style="display: flex; flex-direction: column; align-items: flex-start;">
-        <span style="font-size: 1.7rem; font-weight: bold; letter-spacing: 1px; color: #fff; text-shadow: 1px 1px 8px #25A4A4;">Blue Astra</span>
-        <span style="font-size: 1.7rem; font-weight: bold; letter-spacing: 1px; color: #fff; text-shadow: 1px 1px 8px #25A4A4;">Technologies</span>
-      </div>
-    </div>
-    <nav>
-      <a href="#">What We Do</a>
-      <a href="#">About Us</a>
-      <a href="#">Blue Astra Insights</a>
-      <div class="dropdown-container" style="position: relative;">
-        <a href="Industries.html">Industries</a>
-        <div class="dropdown">
-          <a href="#">Aerospace</a>
-          <a href="#">Defense</a>
-          <a href="#">Logistics</a>
-          <a href="#">Supply Chain</a>
-          <a href="#">Media</a>
-          <a href="#">BFSI</a>
-          <a href="#">Travel/ Vacation</a>
-          <a href="#">Vehicle Rental</a>
-          <a href="#">Industrial / Factory</a>
-          <a href="#">Reporting</a>
-          <a href="#">Other Business</a>
-        </div>
-      </div>
-      <div class="dropdown-container-services" style="position: relative;">
-        <a href="Services.html">Services</a>
-        <div class="dropdown-services">
-          <a href="#">Platform Development</a>
-          <a href="#">Cloudification Services</a>
-          <a href="#">Application Development</a>
-          <a href="#">Change and Migration</a>
-          <a href="#">Consulting/ Advisory</a>
-        </div>
-      </div>
-      <a href="#">Contact Us</a>
-    </nav>
-  </header>
+<body data-page="home">
 
+  <div id="site-header"></div>
+
+  <!-- Hero -->
   <section class="hero">
-    <video autoplay loop muted playsinline style="max-width: 100%; height: 300px; border-radius: 16px; margin-bottom: 1.5rem; background: #000;">
+    <video autoplay loop muted playsinline style="max-width:100%;height:300px;border-radius:16px;margin-bottom:1.5rem;background:#000;">
       <source src="videos/water-bubble.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
     <h1>Innovate Enterprise with Digital Technology</h1>
     <p>Delivering excellence with technology and innovation.</p>
-    <button>Learn More</button>
+    <button class="hero-btn">Learn More</button>
   </section>
 
-  <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;">The company that provides trendy enterprise solutions to push your enterprise to a whole new level</p>
+  <!-- Intro row -->
+  <div class="two-col">
+    <div class="col">
+      <p style="font-size:1.2rem;line-height:1.6;">The company that provides trendy enterprise solutions to push your enterprise to a whole new level</p>
     </div>
-    <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-      <img src="images/image-placeholder.svg" alt="Placeholder Image" style="max-width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; min-height: 200px;" />
+    <div class="col" style="display:flex;justify-content:center;">
+      <img src="images/image-placeholder.svg" alt="Enterprise solutions" style="border-radius:8px;min-height:200px;">
     </div>
-  </section>
+  </div>
 
-  <section class="section" style="text-align: center; padding: 2rem;">
-    <div style="max-width: 800px; margin: 0 auto; background: #f5f5f5; border-radius: 8px; padding: 2rem;">
-      <video controls style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Video Placeholder</p>
+  <!-- Video 1 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section" style="max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <p style="color: #0096FF; font-size: 1.1rem; line-height: 1.8; text-align: left; margin: 0;">Blue Astra Technologies specializes in a wide range of Application and Platform Development including Customized Design and Development of small-medium and large scale implementations</p>
+  <!-- Two blue-text highlight cards -->
+  <div class="accent-cards">
+    <div class="col text-box" style="flex:1;min-width:300px;">
+      <p class="text-accent">Blue Astra Technologies specializes in a wide range of Application and Platform Development including Customized Design and Development of small-medium and large scale implementations</p>
     </div>
-    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <p style="color: #0096FF; font-size: 1.1rem; line-height: 1.8; text-align: left; margin: 0;">Platform Design, Platform Development and Customized Enterprise Solution at your doorstep.</p>
+    <div class="col text-box" style="flex:1;min-width:300px;">
+      <p class="text-accent">Platform Design, Platform Development and Customized Enterprise Solution at your doorstep.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <div style="background: #f5f5f5; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <video controls style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Video Placeholder</p>
+  <!-- Video 2 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-    <div style="background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <p style="color: #0096FF; font-size: 1.1rem; line-height: 1.8; text-align: center; margin: 0;">Optimize your digital infrastructure and scale effortlessly with our DevOps and Cloud Services. We have efficiency that surpasses the traditional standards</p>
+  <!-- DevOps highlight -->
+  <div class="section">
+    <div class="text-box content-wrap" style="text-align:center;">
+      <p class="text-accent">Optimize your digital infrastructure and scale effortlessly with our DevOps and Cloud Services. We have efficiency that surpasses the traditional standards</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <img src="images/image-placeholder.svg" alt="Placeholder Image" style="max-width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; min-height: 200px;" />
-    <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Image Placeholder</p>
-  </section>
-
-  <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px;">
-       <h2 style="font-size: 2.5rem; color: #0096FF; margin-bottom: 1rem;">We Cherish Change!!</h2>
-    <p style="font-size: 1rem; text-align: left; color: #333333; line-height: 1.6; max-width: 800px; margin: 0 auto 1rem auto;">We welcome change!! Changing Client's Enterprise, means growing demands and flourishing Enterprise!</p>
-    <p style="font-size: 1rem; color: #333333; line-height: 1.6; max-width: 800px; margin: 0 auto;">Empowering the client with technology that's forward looking is our forte!</p>
-    <p style="font-size: 1rem; color: #333333; line-height: 1.6; max-width: 800px; margin: 1rem auto 0 auto;">Our application design teams keep in mind the flexibility and scalability while solution designing for your Enterprise to always keep it a few steps ahead</p>
-   </div>
-    <section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <img src="images/image-placeholder.svg" alt="Placeholder Image" style="max-width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; min-height: 200px;" />
-    <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Image Placeholder</p>
-  </section>
-  
-  </section>
-
-  <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> Enhance, Evolve and Implement radically, progressively! Change while enjoying the benefits of Stability and Scalability</p>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;">While implementing changes, we ensure minimal disruption and maximum efficiency. Crafted for success, Blue Astra Technologies ensures smooth functionality that is adept with your cross-platform enterprise architecture - both compabible and scalable, robust and sustaibale technology for the long run</p>
+  <!-- Image 1 -->
+  <div class="section" style="text-align:center;">
+    <div class="content-wrap">
+      <img src="images/image-placeholder.svg" alt="Technology" style="border-radius:8px;min-height:200px;margin:0 auto;">
+      <p style="margin-top:1rem;color:#666;font-size:0.9rem;">Image Placeholder</p>
     </div>
-  
-  </section>
+  </div>
 
-  <section class="section" style="text-align: center; padding: 2rem;">
-    <div style="max-width: 800px; margin: 0 auto; background: #f5f5f5; border-radius: 8px; padding: 2rem;">
-      <video controls style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Video Placeholder</p>
+  <!-- We Cherish Change -->
+  <div class="two-col">
+    <div class="col">
+      <h2 style="font-size:2.5rem;color:var(--color-accent);margin-bottom:1rem;">We Cherish Change!!</h2>
+      <p style="font-size:1rem;line-height:1.6;">We welcome change!! Changing Client's Enterprise, means growing demands and flourishing Enterprise!</p>
+      <p style="font-size:1rem;line-height:1.6;">Empowering the client with technology that's forward looking is our forte!</p>
+      <p style="font-size:1rem;line-height:1.6;">Our application design teams keep in mind the flexibility and scalability while solution designing for your Enterprise to always keep it a few steps ahead</p>
     </div>
-  </section>
-
-  <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> Collaborate with our unique specialised team that does DevOps implementation. Cross-Platform, Versatile, Agile and Robust Platform Implementation that every industry needs.   </p>
+    <div class="col" style="display:flex;justify-content:center;">
+      <img src="images/image-placeholder.svg" alt="Change and innovation" style="border-radius:8px;min-height:200px;">
     </div>
-  
-  </section>
+  </div>
 
-<section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <img src="images/image-placeholder.svg" alt="Placeholder Image" style="max-width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; min-height: 200px;" />
-    <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Image Placeholder</p>
-  </section>
-
-<section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;">We follow full lifecycle Quality Checks to assure highest level of Quality for our Clients  </p>
-     <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> Along with constant changes, your Enterprise now gets the stability that it deserves with out expert checks for a stable infrastructure and progressive technology</p>
+  <!-- Enhance, Evolve -->
+  <div class="section">
+    <div class="content-wrap">
+      <p style="font-size:1.2rem;line-height:1.6;">Enhance, Evolve and Implement radically, progressively! Change while enjoying the benefits of Stability and Scalability</p>
+      <p style="font-size:1.2rem;line-height:1.6;">While implementing changes, we ensure minimal disruption and maximum efficiency. Crafted for success, Blue Astra Technologies ensures smooth functionality that is adept with your cross-platform enterprise architecture â€” both compatible and scalable, robust and sustainable technology for the long run</p>
     </div>
+  </div>
 
-
-  <section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <div style="background: #f5f5f5; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <video controls style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-             </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Video Placeholder</p>
+  <!-- Video 3 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
     </div>
-  </section>
+  </div>
 
-    <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-      <img src="images/image-placeholder.svg" alt="Placeholder Image" style="max-width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; min-height: 200px;" />
+  <!-- DevOps collaboration -->
+  <div class="section">
+    <div class="content-wrap">
+      <p style="font-size:1.2rem;line-height:1.6;">Collaborate with our unique specialised team that does DevOps implementation. Cross-Platform, Versatile, Agile and Robust Platform Implementation that every industry needs.</p>
     </div>
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> At Blue Astra Technologies, our forte is to build sustainable solution for our clients that works in the long run, yet has the ability to scale and expand to the client's needs far along in the future.</p>
+  </div>
+
+  <!-- Image 2 -->
+  <div class="section" style="text-align:center;">
+    <div class="content-wrap">
+      <img src="images/image-placeholder.svg" alt="DevOps" style="border-radius:8px;min-height:200px;margin:0 auto;">
+      <p style="margin-top:1rem;color:#666;font-size:0.9rem;">Image Placeholder</p>
     </div>
-    
-  </section>
+  </div>
 
-  <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-    
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> Bringing 25+ years of experience in delivering innovative solutions, a highly skilled team awaits to engage multiple systems within your industry's landscape </p>
-    </div><div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-      <img src="images/image-placeholder.svg" alt="Placeholder Image" style="max-width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; min-height: 200px;" />
+  <!-- Quality Checks -->
+  <div class="section">
+    <div class="content-wrap">
+      <p style="font-size:1.2rem;line-height:1.6;">We follow full lifecycle Quality Checks to assure highest level of Quality for our Clients</p>
+      <p style="font-size:1.2rem;line-height:1.6;">Along with constant changes, your Enterprise now gets the stability that it deserves with our expert checks for a stable infrastructure and progressive technology</p>
     </div>
-    
-  </section>
+  </div>
 
-<section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-     <h2>Our Mission</h2>
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> To be the Top-Tier firm and your best technology partner who would enable steep yet progressive changes within your enterprise along with extreme precision and stability </p>
-   
-  </section>
-
-  <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-     <h2>Our Vision</h2>
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> Transcend the Client's Enterprise Technology Landscape, using innovative solutions at an enterprise level and ensure that the Enterprise benefits far along in the future</p>
-   
-  </section>
-
- <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-     <h2>Agile Model</h2>
-    <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> We deploy iterative models and workflows that support the lifecycle of the software development, indcluding testing, re-iterative implementation and quality testing, iterative bug-fixing, innovations on a repeat - all the way to the limits of perfection! </p>
-   </div>
-   
-  </section>
-
-
-  <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> With a strong understanding of the importance of Data Protection adn Non-Disclosure, we at Blue Astra Technologies, provide an adaptable software that meets your progressive data-privacy needs</p>
+  <!-- Video 4 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
     </div>
-   </p>
-    </div><div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-      <img src="images/image-placeholder.svg" alt="Placeholder Image" style="max-width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; min-height: 200px;" />
-    </div>
-    <section>
-   <div style="flex: 1; min-width: 300px;">
-      <p style="font-size: 1.2rem; line-height: 1.6; text-align: left;"> We enforce the progressive confidentiality along with data privacy stndards at every step of the way and adopt the standards as a part of our working culture </p>
-   </div>
-   <div style="flex: 1; min-width: 300px; display: flex; justify-content: flex-end;">
-      <img src="images/image-placeholder.svg" alt="Placeholder Image" style="max-width: 100%; height: auto; border-radius: 8px; background: #f5f5f5; min-height: 200px;" />
-    </div>
-</section>
-  <section class="section" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 2rem auto; gap: 2rem; flex-wrap: wrap;">
-     <h2>Our Clients</h2>
-    <div style="flex: 1; min-width: 300px;">
-   </div>
-   
-  </section>
+  </div>
 
-  <section class="section" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-      <!-- Review Box 1 -->
-      <div style="background: #e3f1f6; border-radius: 12px; padding: 1.5rem; box-shadow: none;">
-        <p style="color: #333333; font-size: 1rem; line-height: 1.6; margin: 0 0 1rem 0;">"Blue Astra Technologies has transformed our enterprise digital infrastructure. Their expertise in application development is outstanding!"</p>
-        <p style="color: #666666; font-size: 0.9rem; font-weight: 600; margin: 0;">- John Smith, CEO</p>
+  <!-- Sustainable solutions -->
+  <div class="two-col">
+    <div class="col" style="display:flex;justify-content:center;">
+      <img src="images/image-placeholder.svg" alt="Sustainable solutions" style="border-radius:8px;min-height:200px;">
+    </div>
+    <div class="col">
+      <p style="font-size:1.2rem;line-height:1.6;">At Blue Astra Technologies, our forte is to build sustainable solution for our clients that works in the long run, yet has the ability to scale and expand to the client's needs far along in the future.</p>
+    </div>
+  </div>
+
+  <!-- 25+ years -->
+  <div class="two-col">
+    <div class="col">
+      <p style="font-size:1.2rem;line-height:1.6;">Bringing 25+ years of experience in delivering innovative solutions, a highly skilled team awaits to engage multiple systems within your industry's landscape</p>
+    </div>
+    <div class="col" style="display:flex;justify-content:center;">
+      <img src="images/image-placeholder.svg" alt="Experience" style="border-radius:8px;min-height:200px;">
+    </div>
+  </div>
+
+  <!-- Mission -->
+  <div class="section">
+    <div class="content-wrap">
+      <h2 style="font-size:2rem;color:var(--color-accent);">Our Mission</h2>
+      <p style="font-size:1.2rem;line-height:1.6;">To be the Top-Tier firm and your best technology partner who would enable steep yet progressive changes within your enterprise along with extreme precision and stability</p>
+    </div>
+  </div>
+
+  <!-- Vision -->
+  <div class="section">
+    <div class="content-wrap">
+      <h2 style="font-size:2rem;color:var(--color-accent);">Our Vision</h2>
+      <p style="font-size:1.2rem;line-height:1.6;">Transcend the Client's Enterprise Technology Landscape, using innovative solutions at an enterprise level and ensure that the Enterprise benefits far along in the future</p>
+    </div>
+  </div>
+
+  <!-- Agile Model -->
+  <div class="section">
+    <div class="content-wrap">
+      <h2 style="font-size:2rem;color:var(--color-accent);">Agile Model</h2>
+      <p style="font-size:1.2rem;line-height:1.6;">We deploy iterative models and workflows that support the lifecycle of the software development, including testing, re-iterative implementation and quality testing, iterative bug-fixing, innovations on a repeat â€” all the way to the limits of perfection!</p>
+    </div>
+  </div>
+
+  <!-- Data Protection -->
+  <div class="two-col">
+    <div class="col">
+      <p style="font-size:1.2rem;line-height:1.6;">With a strong understanding of the importance of Data Protection and Non-Disclosure, we at Blue Astra Technologies, provide an adaptable software that meets your progressive data-privacy needs</p>
+    </div>
+    <div class="col" style="display:flex;justify-content:center;">
+      <img src="images/image-placeholder.svg" alt="Data protection" style="border-radius:8px;min-height:200px;">
+    </div>
+  </div>
+
+  <!-- Data Privacy -->
+  <div class="two-col">
+    <div class="col">
+      <p style="font-size:1.2rem;line-height:1.6;">We enforce the progressive confidentiality along with data privacy standards at every step of the way and adopt the standards as a part of our working culture</p>
+    </div>
+    <div class="col" style="display:flex;justify-content:flex-end;">
+      <img src="images/image-placeholder.svg" alt="Data privacy" style="border-radius:8px;min-height:200px;">
+    </div>
+  </div>
+
+  <!-- Client Reviews -->
+  <div class="section">
+    <div class="content-wrap" style="text-align:center;margin-bottom:1rem;">
+      <h2>Our Clients</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <p>"Blue Astra Technologies has transformed our enterprise digital infrastructure. Their expertise in application development is outstanding!"</p>
+        <p class="reviewer">â€” John Smith, CEO</p>
       </div>
-      <!-- Review Box 2 -->
-      <div style="background: #e3f1f6; border-radius: 12px; padding: 1.5rem; box-shadow: none;">
-        <p style="color: #333333; font-size: 1rem; line-height: 1.6; margin: 0 0 1rem 0;">"Exceptional service and delivery! The team consistently exceeded our expectations in platform development."</p>
-        <p style="color: #666666; font-size: 0.9rem; font-weight: 600; margin: 0;">- Sarah Johnson, CTO</p>
+      <div class="review-card">
+        <p>"Exceptional service and delivery! The team consistently exceeded our expectations in platform development."</p>
+        <p class="reviewer">â€” Sarah Johnson, CTO</p>
       </div>
-      <!-- Review Box 3 -->
-      <div style="background: #e3f1f6; border-radius: 12px; padding: 1.5rem; box-shadow: none;">
-        <p style="color: #333333; font-size: 1rem; line-height: 1.6; margin: 0 0 1rem 0;">"Their DevOps and cloud solutions have significantly improved our operational efficiency. Highly recommended!"</p>
-        <p style="color: #666666; font-size: 0.9rem; font-weight: 600; margin: 0;">- Michael Brown, VP Operations</p>
+      <div class="review-card">
+        <p>"Their DevOps and cloud solutions have significantly improved our operational efficiency. Highly recommended!"</p>
+        <p class="reviewer">â€” Michael Brown, VP Operations</p>
       </div>
-      <!-- Review Box 4 -->
-      <div style="background: #e3f1f6; border-radius: 12px; padding: 1.5rem; box-shadow: none;">
-        <p style="color: #333333; font-size: 1rem; line-height: 1.6; margin: 0 0 1rem 0;">"Blue Astra's customized solutions perfectly aligned with our business needs. A true technology partner!"</p>
-        <p style="color: #666666; font-size: 0.9rem; font-weight: 600; margin: 0;">- Emily Davis, Director</p>
+      <div class="review-card">
+        <p>"Blue Astra's customized solutions perfectly aligned with our business needs. A true technology partner!"</p>
+        <p class="reviewer">â€” Emily Davis, Director</p>
       </div>
-      <!-- Review Box 5 -->
-      <div style="background: #e3f1f6; border-radius: 12px; padding: 1.5rem; box-shadow: none;">
-        <p style="color: #333333; font-size: 1rem; line-height: 1.6; margin: 0 0 1rem 0;">"Professional, knowledgeable, and deliver on time. Our enterprise migration was seamless thanks to their expertise."</p>
-        <p style="color: #666666; font-size: 0.9rem; font-weight: 600; margin: 0;">- Robert Wilson, IT Manager</p>
+      <div class="review-card">
+        <p>"Professional, knowledgeable, and deliver on time. Our enterprise migration was seamless thanks to their expertise."</p>
+        <p class="reviewer">â€” Robert Wilson, IT Manager</p>
       </div>
-      <!-- Review Box 6 -->
-      <div style="background: #e3f1f6; border-radius: 12px; padding: 1.5rem; box-shadow: none;">
-        <p style="color: #333333; font-size: 1rem; line-height: 1.6; margin: 0 0 1rem 0;">"Outstanding cloud services and support. They truly understand enterprise needs and deliver scalable solutions."</p>
-        <p style="color: #666666; font-size: 0.9rem; font-weight: 600; margin: 0;">- Lisa Anderson, CFO</p>
+      <div class="review-card">
+        <p>"Outstanding cloud services and support. They truly understand enterprise needs and deliver scalable solutions."</p>
+        <p class="reviewer">â€” Lisa Anderson, CFO</p>
       </div>
     </div>
-  </section>
+  </div>
 
+  <div id="site-footer"></div>
 
-  <footer>
-    <p>&copy; 2026 Blue Astra Technologies. All rights reserved.</p>
-    <p>
-      <a href="#">Privacy Policy</a> | 
-      <a href="#">Terms of Service</a>
-    </p>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const dropdownContainer = document.querySelector('.dropdown-container');
-      const industriesLink = dropdownContainer.querySelector('a');
-
-      industriesLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        dropdownContainer.classList.toggle('active');
-      });
-
-      document.addEventListener('click', (event) => {
-        if (!dropdownContainer.contains(event.target)) {
-          dropdownContainer.classList.remove('active');
-        }
-      });
-
-      // Services dropdown
-      const dropdownContainerServices = document.querySelector('.dropdown-container-services');
-      const servicesLink = dropdownContainerServices.querySelector('a');
-
-      servicesLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        dropdownContainerServices.classList.toggle('active');
-      });
-
-      document.addEventListener('click', (event) => {
-        if (!dropdownContainerServices.contains(event.target)) {
-          dropdownContainerServices.classList.remove('active');
-        }
-      });
-
-      // Add active class to header nav items on click
-      const navLinks = document.querySelectorAll('nav > a, .dropdown-container > a, .dropdown-container-services > a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          navLinks.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-    });
-  </script>
+  <script src="js/components.js"></script>
 </body>
 </html>

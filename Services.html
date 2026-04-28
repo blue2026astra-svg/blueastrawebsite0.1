@@ -1,258 +1,24 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services - Blue Astra Technologies</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #25A4A4;
-      --secondary-color: #ffffff;
-      --dark-color: #333333;
-      --light-gray: #f5f5f5;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: var(--dark-color);
-      background-color: var(--secondary-color);
-    }
-
-    header {
-      background-color: #000000;
-      color: var(--secondary-color);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 2.5rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    nav {
-      position: relative;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      gap: 0.5rem;
-    }
-
-    nav a {
-      flex: none;
-      text-align: center;
-      color: var(--secondary-color);
-      margin: 0 0.5rem;
-      text-decoration: none;
-      font-weight: 600;
-      position: relative;
-      text-transform: uppercase;
-      transition: background 0.2s, color 0.2s;
-      border-bottom: 3px solid transparent;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    nav a:active,
-    nav a.active {
-      color: #fff !important;
-      background: #000 !important;
-      border-bottom: 3px solid #1F51FF;
-    }
-
-    .dropdown {
-      position: absolute;
-      display: none;
-      background-color: black;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 0.5rem 0;
-      z-index: 1000;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 0.5rem;
-    }
-
-    .dropdown-container {
-      position: relative;
-    }
-
-    .dropdown-container .dropdown {
-      display: none;
-    }
-
-    .dropdown-container.active .dropdown {
-      display: grid;
-    }
-
-    nav a {
-      position: relative;
-      cursor: pointer;
-    }
-
-    .dropdown-services {
-      position: absolute;
-      display: none;
-      background-color: black;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 0.5rem 0;
-      z-index: 1000;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.5rem;
-    }
-
-    .dropdown-services a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: #808080;
-      text-decoration: none;
-      font-weight: 500;
-      text-transform: uppercase;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .dropdown-services a:hover {
-      background-color: black;
-      color: white !important;
-      text-decoration: underline;
-    }
-
-    .dropdown-container-services {
-      position: relative;
-    }
-
-    .dropdown-container-services .dropdown-services {
-      display: none;
-    }
-
-    .dropdown-container-services.active .dropdown-services {
-      display: grid;
-    }
-
-    .hero {
-      background: linear-gradient(to bottom, #000000 0%, var(--primary-color) 100%);
-      color: var(--secondary-color);
-      text-align: center;
-      padding: 4rem 2rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .section {
-      padding: 3rem 2rem;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .service-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: none;
-      border: 1px solid #e0e0e0;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .service-card h3 {
-      color: #96DED1;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .service-card p {
-      color: #333333;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      background-color: var(--dark-color);
-      color: var(--secondary-color);
-      text-align: center;
-      padding: 2rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    footer a {
-      color: var(--primary-color);
-      margin: 0 0.5rem;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/services.css">
 </head>
-<body>
-  <header>
-    <div class="logo" style="display: flex; flex-direction: row; align-items: center; line-height: 1.1; margin-right: 1.5rem;">
-      <img src="images/tree-placeholder.svg" alt="Blue Astra Logo" style="height: 48px; width: 40px; margin-right: 10px;" />
-      <div style="width: 3px; height: 48px; background: #e3f1f6; border-radius: 1.5px; margin-right: 14px;"></div>
-      <div style="display: flex; flex-direction: column; align-items: flex-start;">
-        <span style="font-size: 1.7rem; font-weight: bold; letter-spacing: 1px; color: #fff; text-shadow: 1px 1px 8px #25A4A4;">Blue Astra</span>
-        <span style="font-size: 1.7rem; font-weight: bold; letter-spacing: 1px; color: #fff; text-shadow: 1px 1px 8px #25A4A4;">Technologies</span>
-      </div>
-    </div>
-    <nav>
-      <a href="Tester-1-BlueAstra.html">What We Do</a>
-      <a href="#">About Us</a>
-      <a href="#">Blue Astra Insights</a>
-      <div class="dropdown-container" style="position: relative;">
-        <a href="#">Industries</a>
-        <div class="dropdown">
-          <a href="#">Aerospace</a>
-          <a href="#">Defense</a>
-          <a href="#">Logistics</a>
-          <a href="#">Supply Chain</a>
-          <a href="#">Media</a>
-          <a href="#">BFSI</a>
-          <a href="#">Travel/ Vacation</a>
-          <a href="#">Vehicle Rental</a>
-          <a href="#">Industrial / Factory</a>
-          <a href="#">Reporting</a>
-          <a href="#">Other Business</a>
-        </div>
-      </div>
-      <div class="dropdown-container-services" style="position: relative;">
-        <a href="Services.html">Services</a>
-        <div class="dropdown-services">
-          <a href="#">Platform Development</a>
-          <a href="#">Cloudification Services</a>
-          <a href="#">Application Development</a>
-          <a href="#">Change and Migration</a>
-          <a href="#">Consulting/ Advisory</a>
-        </div>
-      </div>
-      <a href="#">Contact Us</a>
-    </nav>
-  </header>
+<body data-page="services">
+
+  <div id="site-header"></div>
 
   <section class="hero">
     <h1>Our Services</h1>
     <p>Comprehensive technology solutions for your enterprise</p>
   </section>
 
-  <section class="section">
+  <!-- Service cards -->
+  <div class="section">
     <div class="services-grid">
       <div class="service-card">
         <h3>Platform Development</h3>
@@ -271,7 +37,7 @@
         <p>Smooth transition and migration services with minimal disruption to your business operations.</p>
       </div>
       <div class="service-card">
-        <h3>Consulting/ Advisory</h3>
+        <h3>Consulting / Advisory</h3>
         <p>Expert technology consulting to help you make informed decisions and achieve your business goals.</p>
       </div>
       <div class="service-card">
@@ -279,152 +45,92 @@
         <p>Implement DevOps practices to streamline your development processes and achieve faster delivery cycles.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <div style="background: #f5f5f5; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <video controls style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Video Placeholder</p>
+  <!-- Video 1 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <h2 style="font-size: 2rem; color: #96DED1; margin-bottom: 1.5rem;">Platform Implementation</h2>
-    <div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-      <p style="font-size: 1rem; color: #333333; line-height: 1.8; margin-bottom: 1.5rem;">Customized Applications including maintenance of warehouse, supplies, clients, order supply systems, tracking, team performance tracing, dispatch units, payment and billing, statistical analysis, return and cancellation and research on incoming customers.</p>
-      <p style="font-size: 1rem; color: #333333; line-height: 1.8;">Specific Product Integration such as Oracle OTS, E-Business Suite, Email Applications, Calculation Engines for Statistics and Analysis, Data Analytics, Business Intelligence, Intelligent Reporting, Platforms Customized for Logistics that can be specially tailored to specific needs within your Enterprise</p>
+  <!-- Platform Implementation -->
+  <div class="section">
+    <div class="service-section content-wrap">
+      <h2>Platform Implementation</h2>
+      <p>Customized Applications including maintenance of warehouse, supplies, clients, order supply systems, tracking, team performance tracing, dispatch units, payment and billing, statistical analysis, return and cancellation and research on incoming customers.</p>
+      <p>Specific Product Integration such as Oracle OTS, E-Business Suite, Email Applications, Calculation Engines for Statistics and Analysis, Data Analytics, Business Intelligence, Intelligent Reporting, Platforms Customized for Logistics that can be specially tailored to specific needs within your Enterprise.</p>
     </div>
-  </section>
+  </div>
 
-<section>
-    <div style="background: #f5f5f5; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <video controls style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem; ">Video Placeholder</p>
+  <!-- Video 2 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <h2 style="font-size: 2rem; color: #96DED1; margin-bottom: 1.5rem;">Customized Product Development</h2>
-    <div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-      <p style="font-size: 1rem; color: #333333; line-height: 1.8; margin-bottom: 1.5rem;"> Customized large scale applications and platforms utilizing technologies including ASP.NET/ Java/ J2EE and a range of software programs from Technology Stack to be configured to enable your Enterprise with changing technology demands. Range of other technology stack handle middle layer and backend services including database calls and integrations with backend systems.</p>
-      <p style="font-size: 1rem; color: #333333; line-height: 1.8;">Set up OFF-THE-SHELF Tech including Oracle, Amazon, Google and develop API suitable for your enterprise, integrate the technology to other in-housed products to enable feasible and on-demand enterprise solutioning</p>
+  <!-- Customized Product Development -->
+  <div class="section">
+    <div class="service-section content-wrap">
+      <h2>Customized Product Development</h2>
+      <p>Customized large scale applications and platforms utilizing technologies including ASP.NET / Java / J2EE and a range of software programs from a Technology Stack configured to enable your Enterprise with changing technology demands. A range of other technology stacks handle middle layer and backend services including database calls and integrations with backend systems.</p>
+      <p>Set up off-the-shelf tech including Oracle, Amazon, Google and develop APIs suitable for your enterprise, integrate the technology to other in-house products to enable feasible and on-demand enterprise solutioning.</p>
     </div>
-  </section>
+  </div>
 
-// this is the third paragraph
-
-  <section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <div style="background: #f5f5f5; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <video controls style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Video Placeholder</p>
+  <!-- Video 3 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <h2 style="font-size: 2rem; color: #96DED1; margin-bottom: 1.5rem;">API and Integration Services</h2>
-    <div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-      <p style="font-size: 1rem; color: #333333; line-height: 1.8; margin-bottom: 1.5rem;"> We provide integraion and API development at Blue Astra Technologies, to bridge the gap between OTS Product and multiple systems that need to stay de-coupled yet interact to enable fully functional Enterprise Architecture and Technology within an Organization </p>
-       </div>
-  </section>
-
-
-// this is the fourth paragraph
-
-  <section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <div style="background: #f5f5f5; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <video controls style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Video Placeholder</p>
+  <!-- API and Integration Services -->
+  <div class="section">
+    <div class="service-section content-wrap">
+      <h2>API and Integration Services</h2>
+      <p>We provide integration and API development at Blue Astra Technologies, to bridge the gap between OTS products and multiple systems that need to stay de-coupled yet interact to enable fully functional Enterprise Architecture and Technology within an Organisation.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <h2 style="font-size: 2rem; color: #96DED1; margin-bottom: 1.5rem;"> Quality Assurance </h2>
-    <div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-      <p style="font-size: 1rem; color: #333333; line-height: 1.8; margin-bottom: 1.5rem;"> At Blue Astra Technologies, we prioritize quality and reliability in all our solutions. Our comprehensive quality assurance processes ensure that every product meets the highest standards of performance and user satisfaction. We take Quality Assurance seriously! Other than providing a range of Unit Testing, Test Planning and running through the Test Plan, Test Execution and SDLC standards, we also provide system testing including range of tools including Selenium</p>
-       </div>
-  </section>
-
-
-// this is the fifth paragraph
-
-  <section class="section" style="text-align: center; padding: 2rem; max-width: 1200px; margin: 0 auto;">
-    <div style="background: #f5f5f5; border-radius: 12px; padding: 2rem; box-shadow: none;">
-      <video controls style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; background: #000;">
-        <source src="videos/video-placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Video Placeholder</p>
+  <!-- Video 4 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <h2 style="font-size: 2rem; color: #96DED1; margin-bottom: 1.5rem;"> Cloud Services </h2>
-    <div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-      <p style="font-size: 1rem; color: #333333; line-height: 1.8; margin-bottom: 1.5rem;"> If you are looking for the ultimate 'Cloudification' of your Enterprise, Blue Astra Technologies is the perfect partner! At Blue Astra Technologoies, we provide assessment, cloud transformation, risk mitigation, cloud migration, planning and suitable execution throughout the lifecycle 
-                
-      </p>
-       </div>
-  </section>
+  <!-- Quality Assurance -->
+  <div class="section">
+    <div class="service-section content-wrap">
+      <h2>Quality Assurance</h2>
+      <p>At Blue Astra Technologies, we prioritize quality and reliability in all our solutions. Our comprehensive quality assurance processes ensure that every product meets the highest standards of performance and user satisfaction. We take Quality Assurance seriously! Other than providing a range of Unit Testing, Test Planning and running through the Test Plan, Test Execution and SDLC standards, we also provide system testing including a range of tools such as Selenium.</p>
+    </div>
+  </div>
 
+  <!-- Video 5 -->
+  <div class="section">
+    <div class="video-block content-wrap">
+      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>Video Placeholder</p>
+    </div>
+  </div>
 
-  <footer>
-    <p>&copy; 2026 Blue Astra Technologies. All rights reserved.</p>
-    <p>
-      <a href="#">Privacy Policy</a> | 
-      <a href="#">Terms of Service</a>
-    </p>
-  </footer>
+  <!-- Cloud Services -->
+  <div class="section">
+    <div class="service-section content-wrap">
+      <h2>Cloud Services</h2>
+      <p>If you are looking for the ultimate Cloudification of your Enterprise, Blue Astra Technologies is the perfect partner! At Blue Astra Technologies, we provide assessment, cloud transformation, risk mitigation, cloud migration, planning and suitable execution throughout the lifecycle.</p>
+    </div>
+  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const dropdownContainer = document.querySelector('.dropdown-container');
-      const industriesLink = dropdownContainer.querySelector('a');
+  <div id="site-footer"></div>
 
-      industriesLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        dropdownContainer.classList.toggle('active');
-      });
-
-      document.addEventListener('click', (event) => {
-        if (!dropdownContainer.contains(event.target)) {
-          dropdownContainer.classList.remove('active');
-        }
-      });
-
-      const dropdownContainerServices = document.querySelector('.dropdown-container-services');
-      const servicesLink = dropdownContainerServices.querySelector('a');
-
-      servicesLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        dropdownContainerServices.classList.toggle('active');
-      });
-
-      document.addEventListener('click', (event) => {
-        if (!dropdownContainerServices.contains(event.target)) {
-          dropdownContainerServices.classList.remove('active');
-        }
-      });
-
-      const navLinks = document.querySelectorAll('nav > a, .dropdown-container > a, .dropdown-container-services > a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          navLinks.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-    });
-  </script>
+  <script src="js/components.js"></script>
 </body>
 </html>

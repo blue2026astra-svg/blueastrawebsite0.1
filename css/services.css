@@ -1,0 +1,58 @@
+/* ── Services card grid ─────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  color: var(--color-teal-light);
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.service-card p {
+  color: var(--color-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Service section heading + body ─────────────────────── */
+.service-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.service-section h2 {
+  font-size: 2rem;
+  color: var(--color-teal-light);
+  margin: 0 0 1.5rem;
+}
+
+.service-section p {
+  font-size: 1rem;
+  color: var(--color-dark);
+  line-height: 1.8;
+  margin: 0 0 1.5rem;
+}
+
+.service-section p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,84 @@
+/* ── Hero button ────────────────────────────────────────── */
+.hero-btn {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.hero-btn:hover {
+  background-color: #e0f7f7;
+}
+
+/* ── Blue highlight text ────────────────────────────────── */
+.text-accent {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Service cards grid ─────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+}
+
+/* ── Tinted text box ────────────────────────────────────── */
+.text-box {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ── Reviews ────────────────────────────────────────────── */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
+
+.review-card {
+  background: #e3f1f6;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.review-card p {
+  color: var(--color-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.review-card .reviewer {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}

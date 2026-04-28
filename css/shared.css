@@ -1,0 +1,327 @@
+/* ── Box Model Reset ────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ── Design Tokens ──────────────────────────────────────── */
+:root {
+  --color-primary:    #25A4A4;
+  --color-white:      #ffffff;
+  --color-dark:       #333333;
+  --color-light:      #f5f5f5;
+  --color-accent:     #0096FF;
+  --color-teal-light: #96DED1;
+  --font-main:        'Montserrat', sans-serif;
+  --max-width:        1200px;
+  --section-pad:      3rem 2rem;
+  --radius:           12px;
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+header {
+  background-color: #000;
+  color: var(--color-white);
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+  line-height: 1.1;
+}
+
+.logo img {
+  height: 48px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo-divider {
+  width: 3px;
+  height: 48px;
+  background: #e3f1f6;
+  border-radius: 1.5px;
+  margin-right: 14px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-text span {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 1px 1px 8px var(--color-primary);
+}
+
+/* ── Nav ────────────────────────────────────────────────── */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+nav > a,
+.dropdown-container > a,
+.dropdown-container-services > a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+nav > a:hover,
+.dropdown-container > a:hover,
+.dropdown-container-services > a:hover {
+  color: var(--color-primary);
+}
+
+nav > a.active,
+.dropdown-container > a.active,
+.dropdown-container-services > a.active {
+  color: var(--color-white);
+  border-bottom-color: #1F51FF;
+}
+
+/* ── Dropdowns ──────────────────────────────────────────── */
+.dropdown-container,
+.dropdown-container-services {
+  position: relative;
+}
+
+.dropdown,
+.dropdown-services {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  display: none;
+  background-color: #000;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0;
+  z-index: 1000;
+}
+
+.dropdown {
+  grid-template-columns: repeat(4, 1fr);
+  min-width: 580px;
+}
+
+.dropdown-services {
+  grid-template-columns: repeat(3, 1fr);
+  min-width: 400px;
+}
+
+.dropdown-container.active .dropdown,
+.dropdown-container-services.active .dropdown-services {
+  display: grid;
+}
+
+.dropdown a,
+.dropdown-services a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #808080;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.dropdown a:hover,
+.dropdown-services a:hover {
+  color: var(--color-white);
+  background-color: #1a1a1a;
+}
+
+/* ── Hero ───────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(to bottom, #000 0%, var(--color-primary) 100%);
+  color: var(--color-white);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+}
+
+.hero p {
+  margin: 0 0 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* ── Layout helpers ─────────────────────────────────────── */
+.section {
+  padding: var(--section-pad);
+}
+
+.content-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.two-col {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.two-col .col {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* ── Accent cards (teal left bar) ───────────────────────── */
+.accent-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.accent-card {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.accent-card .bar {
+  width: 3px;
+  background: var(--color-primary);
+  border-radius: 1.5px;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.accent-card p {
+  margin: 0;
+  color: var(--color-dark);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ── Icon cards (small image + text) ───────────────────── */
+.icon-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.icon-card {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  align-items: flex-start;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.icon-card img {
+  width: 40px;
+  height: 40px;
+  margin-right: 14px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.icon-card p {
+  margin: 0;
+  color: var(--color-dark);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ── Video block ────────────────────────────────────────── */
+.video-block {
+  background: var(--color-light);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+}
+
+.video-block video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  background: #000;
+  display: block;
+  margin: 0 auto;
+}
+
+.video-block p {
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: 2rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+footer a {
+  color: var(--color-primary);
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
