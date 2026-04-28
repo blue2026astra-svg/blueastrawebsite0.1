@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries - Blue Astra Technologies</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #25A4A4;
+      --secondary-color: #ffffff;
+      --dark-color: #333333;
+      --light-gray: #f5f5f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--dark-color);
+      background-color: var(--secondary-color);
+    }
+
+    header {
+      background-color: #000000;
+      color: var(--secondary-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    nav {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      flex: none;
+      text-align: center;
+      color: var(--secondary-color);
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+      border-bottom: 3px solid transparent;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    nav a:active,
+    nav a.active {
+      color: #fff !important;
+      background: #000 !important;
+      border-bottom: 3px solid #1F51FF;
+    }
+
+    .dropdown {
+      position: absolute;
+      display: none;
+      background-color: black;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+      z-index: 1000;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .dropdown-container {
+      position: relative;
+    }
+
+    .dropdown-container .dropdown {
+      display: none;
+    }
+
+    .dropdown-container.active .dropdown {
+      display: grid;
+    }
+
+    nav a {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .dropdown-services {
+      position: absolute;
+      display: none;
+      background-color: black;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+      z-index: 1000;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .dropdown-services a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #808080;
+      text-decoration: none;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .dropdown-services a:hover {
+      background-color: black;
+      color: white !important;
+      text-decoration: underline;
+    }
+
+    .dropdown-container-services {
+      position: relative;
+    }
+
+    .dropdown-container-services .dropdown-services {
+      display: none;
+    }
+
+    .dropdown-container-services.active .dropdown-services {
+      display: grid;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, #000000 0%, var(--primary-color) 100%);
+      color: var(--secondary-color);
+      text-align: center;
+      padding: 4rem 2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .industry-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: left;
+    }
+
+    .industry-section h2 {
+      color: #96DED1;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .industry-section p {
+      color: #333333;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-placeholder {
+      background: #f5f5f5;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: none;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .video-placeholder video {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    .video-placeholder p {
+      margin-top: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background-color: var(--dark-color);
+      color: var(--secondary-color);
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" style="display: flex; flex-direction: row; align-items: center; line-height: 1.1; margin-right: 1.5rem;">
+      <img src="images/tree-placeholder.svg" alt="Blue Astra Logo" style="height: 48px; width: 40px; margin-right: 10px;" />
+      <div style="width: 3px; height: 48px; background: #e3f1f6; border-radius: 1.5px; margin-right: 14px;"></div>
+      <div style="display: flex; flex-direction: column; align-items: flex-start;">
+        <span style="font-size: 1.7rem; font-weight: bold; letter-spacing: 1px; color: #fff; text-shadow: 1px 1px 8px #25A4A4;">Blue Astra</span>
+        <span style="font-size: 1.7rem; font-weight: bold; letter-spacing: 1px; color: #fff; text-shadow: 1px 1px 8px #25A4A4;">Technologies</span>
+      </div>
+    </div>
+    <nav>
+      <a href="Tester-1-BlueAstra.html">What We Do</a>
+      <a href="#">About Us</a>
+      <a href="#">Blue Astra Insights</a>
+      <div class="dropdown-container" style="position: relative;">
+        <a href="Industries.html">Industries</a>
+        <div class="dropdown">
+          <a href="#">Aerospace</a>
+          <a href="#">Defense</a>
+          <a href="#">Logistics</a>
+          <a href="#">Supply Chain</a>
+          <a href="#">Media</a>
+          <a href="#">BFSI</a>
+          <a href="#">Travel/ Vacation</a>
+          <a href="#">Vehicle Rental</a>
+          <a href="#">Industrial / Factory</a>
+          <a href="#">Reporting</a>
+          <a href="#">Other Business</a>
+        </div>
+      </div>
+      <div class="dropdown-container-services" style="position: relative;">
+        <a href="Services.html">Services</a>
+        <div class="dropdown-services">
+          <a href="#">Platform Development</a>
+          <a href="#">Cloudification Services</a>
+          <a href="#">Application Development</a>
+          <a href="#">Change and Migration</a>
+          <a href="#">Consulting/ Advisory</a>
+        </div>
+      </div>
+      <a href="#">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Industries We Serve</h1>
+    <p>Comprehensive technology solutions across diverse industries</p>
+  </section>
+
+  <!-- Aerospace Section -->
+  <section class="industry-section">
+    <h2>Aerospace</h2>
+    <p>Blue Astra Technologies provides cutting-edge digital solutions for the aerospace industry. We offer advanced tracking systems, maintenance management software, flight operation analytics, and integrated communication platforms. Our solutions help aerospace companies optimize their operations, improve safety standards, and enhance passenger experience through innovative technology implementations.</p>
+    <p>From fleet management to ground operations, we deliver customized solutions that streamline processes and ensure compliance with aviation regulations.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+  <section class="industry-section">
+        <p> Streamlined, customized applications specific to aerospace needs. Maintenance of management software, cross-border requirements tracing, supplies, clients, order systems, tracking, team performance, dispatch units, paument and billing, return and cancellations, tracking online payments and statistical analysis, research of incoming customers.</p>
+  </section>
+
+  <!-- Defense Section -->
+  <section class="industry-section">
+    <h2>Defense</h2>
+    <p>We provide robust and secure technology solutions for defense, military, army, and government sectors. Our offerings include secure communication platforms, strategic planning software, logistics management systems, and intelligence analysis tools. We understand the critical nature of defense operations and deliver solutions that ensure maximum security, reliability, and operational efficiency.</p>
+    <p>Our specialized defense solutions include personnel management, equipment tracking, mission planning systems, and secure data exchange platforms designed to meet stringent government standards.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <!-- Medical Section -->
+  <section class="industry-section">
+    <h2>Medical</h2>
+    <p>We provide comprehensive technology solutions for the medical and healthcare sector. Our offerings include hospital management systems, patient record management, appointment scheduling, telemedicine platforms, and medical billing solutions. Blue Astra helps healthcare providers streamline their operations while ensuring compliance with healthcare regulations and data security standards.</p>
+    <p>Our specialized medical solutions include electronic health records (EHR), diagnostic imaging integration, laboratory information systems, and patient engagement platforms designed to improve patient care and operational efficiency.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <section class="section" style="max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex;">
+      <div style="width: 3px; background: #25A4A4; border-radius: 1.5px; margin-right: 14px;"></div>
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;">Utilize our CRM/ERP and API integrations with Medical and Pharmaceutical Industry, expand your possibilities and manage your supplies, billing, employee and resources including equipments in a streamlined fashion.</p>
+    </div>
+    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex;">
+      <div style="width: 3px; background: #25A4A4; border-radius: 1.5px; margin-right: 14px;"></div>
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;">Digitize your laboratory, inventory control, diagnostic reports, doctor nurse schedule, patient records, lab reports, treatment and procedure policy procedure reports, all in one place. Take control of your hospital operations online with our customized hospital solutions</p>
+    </div>
+  </section>
+
+   
+  <!-- Logistics Section -->
+  <section class="industry-section">
+    <h2>Logistics</h2>
+    <p>Blue Astra Technologies offers comprehensive logistics solutions that transform supply chain operations. Our services include warehouse management systems, inventory tracking, route optimization, fleet management, and real-time shipment monitoring. We help logistics companies digitize their operations, reduce costs, and improve delivery efficiency through advanced technology platforms.</p>
+    <p>Our integrated logistics solutions provide end-to-end visibility, automated workflows, and predictive analytics to ensure smooth operations across the entire supply chain.</p>
+  </section>
+
+    <section class="section" style="max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex;">
+      <div style="width: 3px; background: #25A4A4; border-radius: 1.5px; margin-right: 14px;"></div>
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;"> Automate your buyer management, supply order mangement systems to gain effective controls over your OSM systems</p>
+    </div>
+    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex;">
+      <div style="width: 3px; background: #25A4A4; border-radius: 1.5px; margin-right: 14px;"></div>
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;">Monitor and take control of abandoned carts, restrict/ allow supply materials, keep count of goods and inventory</p>
+    </div>
+     <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex;">
+      <div style="width: 3px; background: #25A4A4; border-radius: 1.5px; margin-right: 14px;"></div>
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;"> Get statistics and detailed drill-down reports on goods and inventory, track shipping of supplies from vendors and clients effectively</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <!-- Supply Chain Section -->
+  <section class="industry-section">
+    <h2>Supply Chain</h2>
+    <p>We deliver sophisticated supply chain management solutions that enhance visibility and efficiency. Our platforms offer supplier relationship management, demand forecasting, procurement automation, and distribution optimization. Blue Astra helps businesses build resilient supply chains that can adapt to changing market conditions while maintaining cost effectiveness.</p>
+    <p>Our supply chain solutions integrate seamlessly with existing enterprise systems to provide real-time insights and collaborative tools for better decision making.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <!-- Media Section -->
+  <section class="industry-section">
+    <h2>Media</h2>
+    <p>Blue Astra Technologies empowers media and entertainment companies with digital solutions for content management, distribution, and audience engagement. Our services include digital asset management, content delivery networks, analytics platforms, and interactive media solutions. We help media companies monetize content effectively while delivering seamless experiences to their audiences.</p>
+    <p>From broadcasting to streaming platforms, we provide technology that supports innovation in media production and distribution. Digitize your experience in media and get an online consensus along with a full report for your own personalized analysis</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <!-- BFSI Section -->
+  <section class="industry-section">
+    <h2>BFSI</h2>
+    <p>We provide comprehensive technology solutions for the Banking, Finance, Insurance, and Securities sector. Our offerings include core banking systems, risk management platforms, regulatory compliance software, and customer relationship management tools. Blue Astra helps financial institutions modernize their operations, enhance security, and deliver superior customer experiences.</p>
+    <p>Our BFSI solutions are designed to meet strict regulatory requirements while providing the agility needed to respond to market changes.</p>
+  <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex;">
+      <div style="width: 3px; background: #25A4A4; border-radius: 1.5px; margin-right: 14px;"></div>
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;"> Banking and Financial Institutions that require streamlined regulatory reporting platforms, intelligent run the bank operations platforms, employee administration and resource management, vendor management platforms, integrated platforms taht automate credit lines, markets, OTC Markets, Simplify through automation and all banking solutions</p>
+    </div>
+<div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex;">
+      <div style="width: 3px; background: #25A4A4; border-radius: 1.5px; margin-right: 14px;"></div>
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;"> Automate payments, security monitoring of access, SOC/ compliance, RCSA programs and checks using one time automated 4-eye tech checks and 6-eye tech checks, track all transactions and monitror across systems </p>
+    </div>
+    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex;">
+      <div style="width: 3px; background: #25A4A4; border-radius: 1.5px; margin-right: 14px;"></div>
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;"> Provide fine control using customized intelligence reporting for management, 4-eye and 6-eye checks, monitoring and automation of controls, operations, risk management, investor services, domestic and international OTC trade settlement and exchange traded settlements data massage, provide refined checks for settlements and reduce errors</p>
+</section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex; align-items: flex-start;">
+      <img src="images/image-placeholder.svg" alt="Branch Management" style="width: 40px; height: 40px; margin-right: 14px; flex-shrink: 0;" />
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;"> Simplify Branch Management software, increase your social media presence and channelize your partnership with technology to get better control of banking, welcome more lines of business and channels, get more revenue and more clients</p>
+    </div>
+     <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex; align-items: flex-start;">
+      <img src="images/image-placeholder.svg" alt="Banking Applications" style="width: 40px; height: 40px; margin-right: 14px; flex-shrink: 0;" />
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;"> Customized Banking Applications including reporting, mobile banking, vendor management, employee management, simulations, credit checks, maintaining and building specific banking software </p>
+    </div>
+     <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex; align-items: flex-start;">
+      <img src="images/image-placeholder.svg" alt="Product Integrations" style="width: 40px; height: 40px; margin-right: 14px; flex-shrink: 0;" />
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;"> Specific Product Integrations such as OLAP, E-Business Suite, ERP/ CRM, Email Applications, Calculation Engines for Statistical Analysis, Data Analytics, Business Intelligence, Intelligent Reporting Platforms </p>
+    </div>
+  </section>
+
+  
+
+  <!-- Travel/Vacation Section -->
+  <section class="industry-section">
+    <h2>Travel/Holiday/ Vacation</h2>
+    <p>Blue Astra Technologies delivers innovative solutions for the travel and vacation industry. Our services include booking systems, reservation management, customer profiling, dynamic pricing, and travel analytics. We help travel companies create personalized experiences for travelers while optimizing operational efficiency.</p>
+    <p>From online travel agencies to hotel management, our solutions cover the entire travel ecosystem with integrated technology platforms.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>  
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+  <section class="section" style="max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex; align-items: flex-start;">
+      <img src="images/image-placeholder.svg" alt="Booking Packages" style="width: 40px; height: 40px; margin-right: 14px; flex-shrink: 0;" />
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;">Offer Booking packages, customized applications for automatic payment, integrated payment channels to increase your revenue growth, catch customers attention through social media integrations and push our exciting offers for the upcoming holidays!</p>
+    </div>
+    <div style="flex: 1; min-width: 300px; background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: none; border: none; display: flex; align-items: flex-start;">
+      <img src="images/image-placeholder.svg" alt="Holiday Planner CRM" style="width: 40px; height: 40px; margin-right: 14px; flex-shrink: 0;" />
+      <p style="color: #333333; font-size: 1rem; line-height: 1.8; text-align: left; margin: 0;">Integrate with our Holiday Planner CRM for management of clients, tracing and tracking through billing cycles and profit calculations, ensuring bookings and workflows a proper channel, tracking Customer Success Stories and taking surveys and offering amazing booking experience!</p>
+    </div>
+  </section>
+
+  <!-- Vehicle Rental Section -->
+  <section class="industry-section">
+    <h2>Vehicle Rental</h2>
+    <p>We provide comprehensive vehicle rental management solutions that streamline fleet operations. Our platforms include reservation systems, fleet tracking, maintenance scheduling, pricing management, and customer self-service portals. Blue Astra helps rental companies maximize fleet utilization and enhance customer satisfaction.</p>
+    <p>Our solutions support both short-term and long-term rental operations with integrated billing and reporting capabilities.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <!-- Industrial/Factory Section -->
+  <section class="industry-section">
+    <h2>Industrial/Factory</h2>
+    <p>Blue Astra Technologies offers advanced solutions for industrial and manufacturing sectors. Our offerings include production management systems, quality control platforms, equipment monitoring IoT solutions, and supply chain integration tools. We help factories achieve digital transformation through smart manufacturing technologies.</p>
+    <p>Our industrial solutions enable predictive maintenance, real-time production monitoring, and automated quality assurance processes.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <!-- Reporting Section -->
+  <section class="industry-section">
+    <h2>Reporting</h2>
+    <p>We provide comprehensive reporting and business intelligence solutions across all industries. Our services include data visualization platforms, automated reporting systems, KPI dashboards, and analytical tools. Blue Astra helps organizations transform raw data into actionable insights for better decision making.</p>
+    <p>Our reporting solutions support real-time analytics, custom report creation, and seamless integration with existing enterprise systems.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <!-- Other Business Section -->
+  <section class="industry-section">
+    <h2>Other Business</h2>
+    <p>Blue Astra Technologies serves businesses across various other sectors with customized technology solutions. We understand that every industry has unique requirements, and we work closely with our clients to deliver tailored solutions that address specific business challenges. Our flexible platforms can be adapted to meet the diverse needs of any industry.</p>
+    <p>From startups to enterprises, we provide scalable solutions that grow with your business and adapt to changing market demands.</p>
+  </section>
+  <section class="section">
+    <div class="video-placeholder">
+      <video controls>
+        <source src="videos/video-placeholder.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Video Placeholder</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Blue Astra Technologies. All rights reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a>
+    </p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdownContainer = document.querySelector('.dropdown-container');
+      const industriesLink = dropdownContainer.querySelector('a');
+
+      industriesLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        dropdownContainer.classList.toggle('active');
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!dropdownContainer.contains(event.target)) {
+          dropdownContainer.classList.remove('active');
+        }
+      });
+
+      const dropdownContainerServices = document.querySelector('.dropdown-container-services');
+      const servicesLink = dropdownContainerServices.querySelector('a');
+
+      servicesLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        dropdownContainerServices.classList.toggle('active');
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!dropdownContainerServices.contains(event.target)) {
+          dropdownContainerServices.classList.remove('active');
+        }
+      });
+
+      const navLinks = document.querySelectorAll('nav > a, .dropdown-container > a, .dropdown-container-services > a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
