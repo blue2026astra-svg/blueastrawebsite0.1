@@ -5,7 +5,7 @@
   var headerHTML = `
 <header>
   <div class="logo">
-    <img src="images/tree-placeholder.svg" alt="Blue Astra Logo">
+    <img src="images/black_orange_tree.png" alt="Blue Astra Logo">
     <div class="logo-divider"></div>
     <div class="logo-text">
       <span>Blue Astra</span>
@@ -13,8 +13,8 @@
     </div>
   </div>
   <nav>
-    <a href="Tester-1-BlueAstra.html" data-page="home">What We Do</a>
-    <a href="#">About Us</a>
+    <a href="index.html" data-page="home">What We Do</a>
+    <a href="About.html"> About Us</a>
     <a href="#">Blue Astra Insights</a>
     <div class="dropdown-container">
       <a href="Industries.html" data-page="industries">Industries</a>
@@ -42,7 +42,7 @@
         <a href="#">Consulting / Advisory</a>
       </div>
     </div>
-    <a href="#">Contact Us</a>
+    <a href="Contact.html" data-page="contact">Contact Us</a>
   </nav>
 </header>`;
 

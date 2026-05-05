@@ -7,6 +7,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/services.css">
+  <style>
+    .service-section p,
+    .service-section li,
+    .service-section .service-caption,
+    .service-card p {
+      font-size:1.08rem;
+      line-height:1.8;
+      color:#1f1f1f;
+      margin-bottom:1rem;
+    }
+    .service-section h2,
+    .service-card h3 {
+      margin-top:0;
+      margin-bottom:1rem;
+      color:var(--color-accent);
+      letter-spacing:0.02em;
+    }
+    .service-section h2 {
+      font-size:2rem;
+    }
+    .service-card h3 {
+      font-size:1.25rem;
+    }
+    .service-two-col + p {
+      margin-top:2rem;
+    }
+    .service-image {
+      border-radius:16px;
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+      box-shadow:0 18px 40px rgba(0,0,0,0.12);
+    }
+    .service-two-col {
+      display:flex;
+      gap:1.5rem;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:1.5rem;
+    }
+    .service-two-col .col {
+      flex:1 1 45%;
+      min-width:260px;
+    }
+    .service-two-col .col p {
+      border-left:4px solid #7DF9FF;
+      padding-left:1rem;
+      margin-left:0;
+    }
+    .service-three-col {
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:1.5rem;
+    }
+    .service-three-col .col {
+      flex:1 1 calc(33.333% - 0.67rem);
+      min-width:240px;
+    }
+    .service-three-col .service-caption {
+      margin-top:1.5rem;
+      font-size:1rem;
+      color:#4a4a4a;
+    }
+  </style>
 </head>
 <body data-page="services">
 
@@ -47,11 +114,10 @@
     </div>
   </div>
 
-  <!-- Video 1 -->
+  <!-- Feature image -->
   <div class="section">
-    <div class="video-block content-wrap">
-      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-      <p>Video Placeholder</p>
+    <div class="content-wrap" style="text-align:center;max-width:1120px;margin:0 auto;">
+      <img src="images/group-holding-up-colorful-speech-bubbles-and-smili-2026-01-08-22-53-15-utc.JPG" alt="Collaborative strategy" class="service-image" style="width:100%;max-width:1120px;">
     </div>
   </div>
 
@@ -59,16 +125,42 @@
   <div class="section">
     <div class="service-section content-wrap">
       <h2>Platform Implementation</h2>
-      <p>Customized Applications including maintenance of warehouse, supplies, clients, order supply systems, tracking, team performance tracing, dispatch units, payment and billing, statistical analysis, return and cancellation and research on incoming customers.</p>
-      <p>Specific Product Integration such as Oracle OTS, E-Business Suite, Email Applications, Calculation Engines for Statistics and Analysis, Data Analytics, Business Intelligence, Intelligent Reporting, Platforms Customized for Logistics that can be specially tailored to specific needs within your Enterprise.</p>
+      <p>We build resilient enterprise platforms that unify warehouse operations, inventory control, order fulfillment, and finance workflows. Every implementation is designed to reduce friction, improve traceability, and keep your business aligned across departments.</p>
+      <div class="service-two-col">
+        <div class="col">
+          <img src="images/automobile-sales-center-laptop-screen-displaying-2026-03-16-04-31-03-utc.jpg" alt="Platform implementation" class="service-image">
+        </div>
+        <div class="col">
+          <p>From configuration to deployment, our platform delivery is focused on modular extensibility. This means new modules, integrations, or automation engines can be added without disrupting your core operations.</p>
+        </div>
+      </div>
+      <div class="service-two-col">
+        <div class="col">
+          <p>We also deliver intuitive user experiences and actionable dashboards, so stakeholders can monitor team performance, track exceptions, and act on real-time signals faster.</p>
+        </div>
+        <div class="col">
+          <img src="images/business-meeting-on-clean-energy-and-sustainabilit-2026-03-26-03-27-52-utc.jpg" alt="Integrated platform design" class="service-image">
+        </div>
+      </div>
+      <p>Our product integrations include Oracle OTS, E-Business Suite, custom APIs, business intelligence tooling, and logistics automation — all tailored to the way your enterprise operates.</p>
     </div>
   </div>
 
-  <!-- Video 2 -->
+  <!-- Three column image section -->
   <div class="section">
-    <div class="video-block content-wrap">
-      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-      <p>Video Placeholder</p>
+    <div class="service-three-col content-wrap">
+      <div class="col">
+        <img src="images/hotel-check-in-assistance-2026-03-19-01-55-27-utc.jpg" alt="Operations dashboard" class="service-image">
+        <p class="service-caption">Modern operations dashboards for decision-ready teams.</p>
+      </div>
+      <div class="col">
+        <img src="images/imageplatformdevelopment.png" alt="Platform development" class="service-image">
+        <p class="service-caption">Tailored platform components built for enterprise scale.</p>
+      </div>
+      <div class="col">
+        <img src="images/teamcollab.jpg" alt="Team collaboration" class="service-image">
+        <p class="service-caption">Collaborative delivery that connects business and technology.</p>
+      </div>
     </div>
   </div>
 
@@ -76,16 +168,24 @@
   <div class="section">
     <div class="service-section content-wrap">
       <h2>Customized Product Development</h2>
-      <p>Customized large scale applications and platforms utilizing technologies including ASP.NET / Java / J2EE and a range of software programs from a Technology Stack configured to enable your Enterprise with changing technology demands. A range of other technology stacks handle middle layer and backend services including database calls and integrations with backend systems.</p>
-      <p>Set up off-the-shelf tech including Oracle, Amazon, Google and develop APIs suitable for your enterprise, integrate the technology to other in-house products to enable feasible and on-demand enterprise solutioning.</p>
-    </div>
-  </div>
-
-  <!-- Video 3 -->
-  <div class="section">
-    <div class="video-block content-wrap">
-      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-      <p>Video Placeholder</p>
+      <p>Our product development practice crafts custom software that fits the nuances of your enterprise, while staying maintainable and secure. We blend pragmatic engineering with business-driven design to create solutions that actually get used.</p>
+      <div class="service-two-col">
+        <div class="col">
+          <img src="images/businesswomen-talking-during-online-meeting-in-off-2026-01-08-05-55-27-utc.jpg" alt="Product development collaboration" class="service-image">
+        </div>
+        <div class="col">
+          <p>Whether building from scratch or refining an existing stack, we optimize code quality with reusable services, clean interfaces, and a development cadence that supports rapid innovation.</p>
+        </div>
+      </div>
+      <div class="service-two-col">
+        <div class="col">
+          <p>We support full technology stacks — from Java and ASP.NET to cloud-native microservices — so your solution can adapt to new business models and emerging platform needs.</p>
+        </div>
+        <div class="col">
+          <img src="images/financial-team-working-in-a-busy-corporate-office-2026-01-07-23-22-43-utc.jpg" alt="Custom enterprise product" class="service-image">
+        </div>
+      </div>
+      <p>Our approach combines proven frameworks with hands-on product thinking, delivering software that is both powerful and easy for teams to manage.</p>
     </div>
   </div>
 
@@ -93,15 +193,23 @@
   <div class="section">
     <div class="service-section content-wrap">
       <h2>API and Integration Services</h2>
-      <p>We provide integration and API development at Blue Astra Technologies, to bridge the gap between OTS products and multiple systems that need to stay de-coupled yet interact to enable fully functional Enterprise Architecture and Technology within an Organisation.</p>
-    </div>
-  </div>
-
-  <!-- Video 4 -->
-  <div class="section">
-    <div class="video-block content-wrap">
-      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-      <p>Video Placeholder</p>
+      <p>Integration is the connective tissue of modern enterprise systems. We design APIs and middleware that let your applications share data securely, reliably, and in real time.</p>
+      <div class="service-two-col">
+        <div class="col">
+          <img src="images/team-collaboration-analyzing-blueprints-in-modern-2026-01-07-23-37-37-utc.jpg" alt="API strategy" class="service-image">
+        </div>
+        <div class="col">
+          <p>From RESTful services to event-driven architectures, we build integration layers that keep systems decoupled while ensuring business processes stay tightly coordinated.</p>
+        </div>
+      </div>
+      <div class="service-two-col">
+        <div class="col">
+          <p>Our work includes enterprise-grade authentication, data transformation pipelines, and managed API gateways for secure, scalable connectivity.</p>
+        </div>
+        <div class="col">
+          <img src="images/business-meeting-analyzing-charts-with-colleagues-2026-01-07-23-38-33-utc.jpg" alt="Integration services" class="service-image">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -109,15 +217,23 @@
   <div class="section">
     <div class="service-section content-wrap">
       <h2>Quality Assurance</h2>
-      <p>At Blue Astra Technologies, we prioritize quality and reliability in all our solutions. Our comprehensive quality assurance processes ensure that every product meets the highest standards of performance and user satisfaction. We take Quality Assurance seriously! Other than providing a range of Unit Testing, Test Planning and running through the Test Plan, Test Execution and SDLC standards, we also provide system testing including a range of tools such as Selenium.</p>
-    </div>
-  </div>
-
-  <!-- Video 5 -->
-  <div class="section">
-    <div class="video-block content-wrap">
-      <video controls><source src="videos/video-placeholder.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-      <p>Video Placeholder</p>
+      <p>Quality is the foundation of every successful technology program. Our QA practice combines automated test suites, exploratory testing, and performance validation to minimize risk before release.</p>
+      <div class="service-two-col">
+        <div class="col">
+          <img src="images/two-confident-women-in-professional-business-setti-2026-01-05-06-27-17-utc.jpg" alt="Quality assurance" class="service-image">
+        </div>
+        <div class="col">
+          <p>We create structured test plans, run manual and automated scenarios, and report defects with clear business context so teams can resolve issues quickly.</p>
+        </div>
+      </div>
+      <div class="service-two-col">
+        <div class="col">
+          <p>Our approach includes regression validation, security checks, and continuous integration support to keep releases consistent and dependable.</p>
+        </div>
+        <div class="col">
+          <img src="images/a-group-of-young-business-people-with-laptop-sitti-2026-03-10-04-49-40-utc.jpg" alt="Testing and review" class="service-image">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -125,7 +241,23 @@
   <div class="section">
     <div class="service-section content-wrap">
       <h2>Cloud Services</h2>
-      <p>If you are looking for the ultimate Cloudification of your Enterprise, Blue Astra Technologies is the perfect partner! At Blue Astra Technologies, we provide assessment, cloud transformation, risk mitigation, cloud migration, planning and suitable execution throughout the lifecycle.</p>
+      <p>Blue Astra helps enterprises move confidently to the cloud. Our cloud services include strategy, migration, governance, and managed operations for both public and hybrid environments.</p>
+      <div class="service-two-col">
+        <div class="col">
+          <img src="images/smiling-people-with-cloud-computing-and-magnifying-2026-01-08-05-25-05-utc.jpg" alt="Cloud strategy" class="service-image">
+        </div>
+        <div class="col">
+          <p>We reduce risk and accelerate value by applying best practices for cloud architecture, usage monitoring, cost optimization, and secure infrastructure design.</p>
+        </div>
+      </div>
+      <div class="service-two-col">
+        <div class="col">
+          <p>Access anything, anywhere: our cloud solutions are built for resilience, scalability, and rapid response to shifting demand.</p>
+        </div>
+        <div class="col">
+          <img src="images/business-colleagues-celebrate-success-in-an-urban-2026-03-18-15-53-22-utc.jpg" alt="Cloud collaboration" class="service-image">
+        </div>
+      </div>
     </div>
   </div>
 
