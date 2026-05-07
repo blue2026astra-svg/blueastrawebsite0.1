@@ -1,243 +1,84 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Blue Astra Technologies</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css">
-  <link rel="stylesheet" href="css/services.css">
-  <style>
-    .service-section p,
-    .service-section li,
-    .service-section .service-caption,
-    .service-card p {
-      font-size:1.08rem;
-      line-height:1.8;
-      color:#1f1f1f;
-      margin-bottom:1rem;
-    }
-    .service-section h2,
-    .service-card h3 {
-      margin-top:0;
-      margin-bottom:1rem;
-      color:var(--color-accent);
-      letter-spacing:0.02em;
-    }
-    .service-section h2 {
-      font-size:2rem;
-    }
-    .service-card h3 {
-      font-size:1.25rem;
-    }
-    .service-two-col + p {
-      margin-top:2rem;
-    }
-    .service-image {
-      border-radius:16px;
-      width:100%;
-      height:auto;
-      display:block;
-      object-fit:cover;
-      box-shadow:0 18px 40px rgba(0,0,0,0.12);
-    }
-    .service-two-col {
-      display:flex;
-      gap:1.5rem;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top:1.5rem;
-    }
-    .service-two-col .col {
-      flex:1 1 45%;
-      min-width:260px;
-    }
-    .service-two-col .col p {
-      border-left:4px solid #7DF9FF;
-      padding-left:1rem;
-      margin-left:0;
-    }
-    .service-three-col {
-      display:flex;
-      gap:1rem;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin-top:1.5rem;
-    }
-    .service-three-col .col {
-      flex:1 1 calc(33.333% - 0.67rem);
-      min-width:240px;
-    }
-    .service-three-col .service-caption {
-      margin-top:1.5rem;
-      font-size:1rem;
-      color:#4a4a4a;
-    }
-  </style>
+  <link rel="stylesheet" href="css/consolidated.css">
 </head>
+
 <body data-page="aboutus">
-
   <div id="site-header"></div>
+  <section class="hero">
+    <h1>Leadership Team at Blue Astra Technologies</h1>
+    <p>Enterprise-first engineering with AI, scalable architecture, and long-term business value.</p>
+  </section>
+  <section class="section">
+    <div class="about-grid">
+      <div class="image-box">
+        <img src="images/teamcollab.jpg" alt="AI technology" class="service-image">
+      </div>
+      <div class="content">
+        <h2>AI-Led Innovation</h2>
+        <p class="about-copy">At the core of our organization lies artificial intelligence. We design intelligent
+          systems that learn, adapt, and optimize business processes in real time to reduce complexity and improve
+          decision quality.</p>
+      </div>
+    </div>
 
- <style>
-:root {
-  --primary: #1E88E5;
-  --text: #1a1a1a;
-  --muted: #5f6b7a;
-  --bg: #f4f6f8;
-}
+    <div class="about-grid">
+      <div class="image-box">
+        <img src="images/clean-energy.jpg" alt="Technology stack" class="service-image">
+      </div>
+      <div class="content">
+        <h2>Robust Technology Stack</h2>
+        <p class="about-copy">We build sustainable, high-performance applications across modern and enterprise-grade
+          technologies including Java, Next.js, and .NET, with a focus on resilience and maintainability.</p>
+      </div>
+    </div>
 
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
+    <div class="about-grid">
+      <div class="image-box">
+        <img src="images/bankingequities.jpg" alt="Enterprise platforms" class="service-image">
+      </div>
+      <div class="content">
+        <h2>Enterprise Platform Excellence</h2>
+        <p class="about-copy">Our expertise includes integrating and optimizing leading platforms such as Oracle and AWS
+          so organizations can operate as a connected digital enterprise.</p>
+      </div>
+    </div>
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 4rem 1.5rem;
-}
+    <div class="about-grid">
+      <div class="image-box">
+        <img src="images/business-colleagues-celebrate-success-in-an-urban-2026-03-18-15-53-22-utc.jpg"
+          alt="Sustainable code" class="service-image">
+      </div>
+      <div class="content">
+        <h2>Sustainable and Scalable Code</h2>
+        <p class="about-copy">Our development philosophy emphasizes clean architecture and modular design so systems
+          evolve with your business without expensive rewrites.</p>
+      </div>
+    </div>
 
-.hero h1 {
-  color: var(--primary);
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
+    <div class="about-grid">
+      <div class="image-box">
+        <img src="images/team-collaboration-analyzing-blueprints-in-modern-2026-01-07-23-37-37-utc.jpg"
+          alt="Business value" class="service-image">
+      </div>
+      <div class="content">
+        <h2>Driving Long-Term Value</h2>
+        <p class="about-copy">Every solution is engineered for sustained enterprise impact by combining AI, modern
+          frameworks, and platform integration into one dependable technology backbone.</p>
+      </div>
+    </div>
+  </section>
 
-.hero p {
-  max-width: 800px;
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-
-.section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  margin-top: 4rem;
-}
-
-.section:nth-child(even) {
-  direction: rtl;
-}
-
-.section:nth-child(even) .content {
-  direction: ltr;
-}
-
-.image-box img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.content {
-  max-width: 500px;
-}
-
-.content h2 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.content p {
-  color: var(--muted);
-  border-left: 3px solid var(--primary);
-  padding-left: 1rem;
-}
-
-@media (max-width: 900px) {
-  .section {
-    grid-template-columns: 1fr;
-    direction: ltr !important;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="hero">
-  <h1>Leadership Team at Blue Astra Technologies</h1>
-  
-</div>
-
-<div class="section">
-  <div class="image-box">
-    <img src="images/teamcollab.jpg" alt="AI Technology">
-  </div>
-  <div class="content">
-    <h2>AI-Led Innovation</h2>
-    <p>
-      At the core of our organization lies artificial intelligence. We design intelligent systems that learn, adapt, and optimize business processes in real time. Our AI-driven frameworks enable predictive decision-making, automation at scale, and a significant reduction in operational complexity.
-    </p>
-  </div>
-</div>
-
-<div class="section">
-  <div class="image-box">
-    <img src="images/clean-energy.jpg" alt="Technology Stack">
-  </div>
-  <div class="content">
-    <h2>Robust Technology Stack</h2>
-    <p>
-      We specialize in developing sustainable, high-performance applications across modern and enterprise-grade technologies including Java, Next.js, and .NET. Our engineering approach ensures scalability, resilience, and long-term maintainability across every solution we build.
-    </p>
-  </div>
-</div>
-
-<div class="section">
-  <div class="image-box">
-    <img src="images/bankingequities.jpg" alt="Enterprise Solutions">
-  </div>
-  <div class="content">
-    <h2>Enterprise Platform Excellence</h2>
-    <p>
-      Our expertise extends to integrating and optimizing leading enterprise platforms such as Oracle, Amazon Web Services, and other strategic channel partners. We ensure seamless interoperability between systems, enabling organizations to operate as a unified digital enterprise.
-    </p>
-  </div>
-</div>
-
-<div class="section">
-  <div class="image-box">
-    <img src="images/business-colleagues-celebrate-success-in-an-urban-2026-03-18-15-53-22-utc.jpg" alt="Sustainable Code">
-  </div>
-  <div class="content">
-    <h2>Sustainable & Scalable Code</h2>
-    <p>
-      We believe in writing code that lasts. Our development philosophy emphasizes clean architecture, modular design, and sustainability—ensuring that systems evolve with your business without requiring costly rebuilds.
-    </p>
-  </div>
-</div>
-
-<div class="section">
-  <div class="image-box">
-    <img src="images/team-collaboration-analyzing-blueprints-in-modern-2026-01-07-23-37-37-utc.jpg" alt="Business Value">
-  </div>
-  <div class="content">
-    <h2>Driving Long-Term Value</h2>
-    <p>
-      Every solution we deliver is engineered with one goal in mind: long-term enterprise value. By combining AI, modern development frameworks, and enterprise integrations, we create platforms that are not only efficient today but remain profitable and adaptable for years to come.
-    </p>
-  </div>
-</div>
-
-</div>
-
-</body>
-</html>
-
-
- 
   <div id="site-footer"></div>
 
   <script src="js/components.js"></script>
 </body>
+
 </html>

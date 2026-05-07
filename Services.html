@@ -7,73 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/services.css">
-  <style>
-    .service-section p,
-    .service-section li,
-    .service-section .service-caption,
-    .service-card p {
-      font-size:1.08rem;
-      line-height:1.8;
-      color:#1f1f1f;
-      margin-bottom:1rem;
-    }
-    .service-section h2,
-    .service-card h3 {
-      margin-top:0;
-      margin-bottom:1rem;
-      color:var(--color-accent);
-      letter-spacing:0.02em;
-    }
-    .service-section h2 {
-      font-size:2rem;
-    }
-    .service-card h3 {
-      font-size:1.25rem;
-    }
-    .service-two-col + p {
-      margin-top:2rem;
-    }
-    .service-image {
-      border-radius:16px;
-      width:100%;
-      height:auto;
-      display:block;
-      object-fit:cover;
-      box-shadow:0 18px 40px rgba(0,0,0,0.12);
-    }
-    .service-two-col {
-      display:flex;
-      gap:1.5rem;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top:1.5rem;
-    }
-    .service-two-col .col {
-      flex:1 1 45%;
-      min-width:260px;
-    }
-    .service-two-col .col p {
-      border-left:4px solid #7DF9FF;
-      padding-left:1rem;
-      margin-left:0;
-    }
-    .service-three-col {
-      display:flex;
-      gap:1rem;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin-top:1.5rem;
-    }
-    .service-three-col .col {
-      flex:1 1 calc(33.333% - 0.67rem);
-      min-width:240px;
-    }
-    .service-three-col .service-caption {
-      margin-top:1.5rem;
-      font-size:1rem;
-      color:#4a4a4a;
-    }
-  </style>
+  <link rel="stylesheet" href="css/consolidated.css">
 </head>
 <body data-page="services">
 
@@ -116,13 +50,13 @@
 
   <!-- Feature image -->
   <div class="section">
-    <div class="content-wrap" style="text-align:center;max-width:1120px;margin:0 auto;">
-      <img src="images/group-holding-up-colorful-speech-bubbles-and-smili-2026-01-08-22-53-15-utc.JPG" alt="Collaborative strategy" class="service-image" style="width:100%;max-width:1120px;">
+    <div class="content-wrap content-center content-max">
+      <img src="images/group-holding-up-colorful-speech-bubbles-and-smili-2026-01-08-22-53-15-utc.JPG" alt="Collaborative strategy" class="service-image">
     </div>
   </div>
 
   <!-- Platform Implementation -->
-  <div class="section">
+  <div class="section" id="platform-implementation">
     <div class="service-section content-wrap">
       <h2>Platform Implementation</h2>
       <p>We build resilient enterprise platforms that unify warehouse operations, inventory control, order fulfillment, and finance workflows. Every implementation is designed to reduce friction, improve traceability, and keep your business aligned across departments.</p>
@@ -165,7 +99,7 @@
   </div>
 
   <!-- Customized Product Development -->
-  <div class="section">
+  <div class="section" id="customized-product-development">
     <div class="service-section content-wrap">
       <h2>Customized Product Development</h2>
       <p>Our product development practice crafts custom software that fits the nuances of your enterprise, while staying maintainable and secure. We blend pragmatic engineering with business-driven design to create solutions that actually get used.</p>
@@ -190,7 +124,7 @@
   </div>
 
   <!-- API and Integration Services -->
-  <div class="section">
+  <div class="section" id="api-integration-services">
     <div class="service-section content-wrap">
       <h2>API and Integration Services</h2>
       <p>Integration is the connective tissue of modern enterprise systems. We design APIs and middleware that let your applications share data securely, reliably, and in real time.</p>
@@ -214,7 +148,7 @@
   </div>
 
   <!-- Quality Assurance -->
-  <div class="section">
+  <div class="section" id="quality-assurance">
     <div class="service-section content-wrap">
       <h2>Quality Assurance</h2>
       <p>Quality is the foundation of every successful technology program. Our QA practice combines automated test suites, exploratory testing, and performance validation to minimize risk before release.</p>
@@ -238,7 +172,7 @@
   </div>
 
   <!-- Cloud Services -->
-  <div class="section">
+  <div class="section" id="cloud-services">
     <div class="service-section content-wrap">
       <h2>Cloud Services</h2>
       <p>Blue Astra helps enterprises move confidently to the cloud. Our cloud services include strategy, migration, governance, and managed operations for both public and hybrid environments.</p>
