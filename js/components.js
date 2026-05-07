@@ -204,8 +204,63 @@
     document.head.appendChild(script);
   }
 
+  function normalizeContentBlocks() {
+    var page = document.body.dataset.page;
+    if (page !== 'home' && page !== 'industries') {
+      return;
+    }
+
+    if (page === 'industries') {
+      document.querySelectorAll('.industry-section, .two-col .col').forEach(function (container) {
+        Array.prototype.slice.call(container.childNodes).forEach(function (node) {
+          if (node.nodeType !== Node.TEXT_NODE) {
+            return;
+          }
+
+          var text = (node.textContent || '').replace(/\s+/g, ' ').trim();
+          if (!text) {
+            container.removeChild(node);
+            return;
+          }
+
+          var p = document.createElement('p');
+          p.textContent = text;
+          container.replaceChild(p, node);
+        });
+      });
+    }
+
+    document.querySelectorAll('p').forEach(function (p) {
+      if (!p.closest('footer')) {
+        p.classList.add('copy-uniform');
+      }
+    });
+
+    document.querySelectorAll('.two-col .col img, .section img').forEach(function (img) {
+      img.classList.add('aligned-media');
+    });
+
+    var titleSamples = [
+      'Aerospace Equipment & Asset Intelligence',
+      'Transforming Enterprise Software for Aerospace',
+      'Delivering the Future of Aerospace Technology',
+      'Advanced Process Intelligence & Analytics',
+      'Enterprise Software Development & Platform Engineering'
+    ];
+
+    if (page === 'industries') {
+      document.querySelectorAll('p').forEach(function (p) {
+        var text = (p.textContent || '').trim();
+        if (titleSamples.indexOf(text) !== -1) {
+          p.classList.add('title-line');
+        }
+      });
+    }
+  }
+
   inject('site-header', headerHTML);
   inject('site-footer', footerHTML);
+  normalizeContentBlocks();
 
   loadJquery(function ($) {
     if ($) {

@@ -183,3 +183,58 @@
     gap: 1.2rem;
   }
 }
+
+/* Strict normalization for home + industries long-form pages */
+body[data-page="home"] p:not(footer p),
+body[data-page="industries"] p:not(footer p) {
+  font-family: var(--font-main) !important;
+  font-size: 1.08rem !important;
+  line-height: 1.8 !important;
+  color: #1f1f1f !important;
+  margin: 0 0 1rem !important;
+  border-left: 4px solid #7df9ff;
+  padding-left: 0.9rem;
+}
+
+body[data-page="home"] .hero p,
+body[data-page="industries"] .hero p {
+  border-left: 0;
+  padding-left: 0;
+}
+
+body[data-page="home"] .title-line,
+body[data-page="industries"] .title-line {
+  color: #25a4a4 !important;
+  font-weight: 700;
+  font-size: 1.22rem !important;
+  letter-spacing: 0.01em;
+}
+
+body[data-page="home"] .two-col,
+body[data-page="industries"] .two-col {
+  align-items: stretch;
+}
+
+body[data-page="home"] .two-col .col,
+body[data-page="industries"] .two-col .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body[data-page="home"] .two-col .col img,
+body[data-page="industries"] .two-col .col img,
+body[data-page="home"] .section img,
+body[data-page="industries"] .section img {
+  width: 100%;
+  max-width: 540px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+body[data-page="home"] .content-wrap,
+body[data-page="industries"] .content-wrap {
+  max-width: 1120px;
+}
