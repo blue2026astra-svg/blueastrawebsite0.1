@@ -250,8 +250,12 @@
 
     if (page === 'industries') {
       document.querySelectorAll('p').forEach(function (p) {
-        var text = (p.textContent || '').trim();
-        if (titleSamples.indexOf(text) !== -1) {
+        var text = (p.textContent || '').replace(/\s+/g, ' ').trim();
+        var isTitle = titleSamples.some(function (sample) {
+          return text === sample || text.indexOf(sample) !== -1;
+        });
+
+        if (isTitle) {
           p.classList.add('title-line');
         }
       });
