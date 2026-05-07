@@ -24,10 +24,10 @@
         <a href="#">Logistics</a>
         <a href="#">Supply Chain</a>
         <a href="#">Media</a>
-        <a href="#">BFSI</a>
-        <a href="#">Travel / Vacation</a>
+        <a href="#">Banking Finance and Insurance</a>
+        <a href="#">Travel & Vacation</a>
         <a href="#">Vehicle Rental</a>
-        <a href="#">Industrial / Factory</a>
+        <a href="#">Industrial & Factory</a>
         <a href="#">Reporting</a>
         <a href="#">Other Business</a>
       </div>
