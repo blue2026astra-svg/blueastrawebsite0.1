@@ -238,3 +238,36 @@ body[data-page="home"] .content-wrap,
 body[data-page="industries"] .content-wrap {
   max-width: 1120px;
 }
+
+body[data-page="industries"] .bar,
+body[data-page="industries"] .accent-card .bar {
+  display: none !important;
+}
+
+body[data-page="industries"] .travel-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+body[data-page="industries"] .travel-columns p {
+  margin-bottom: 0 !important;
+}
+
+body[data-page="industries"] .requirements-list {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+body[data-page="industries"] .requirements-list li {
+  margin-bottom: 0.6rem;
+  color: #1f1f1f;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  body[data-page="industries"] .travel-columns {
+    grid-template-columns: 1fr;
+  }
+}
