@@ -24,6 +24,7 @@
         <a href="Industries.html#logistics">Logistics</a>
         <a href="Industries.html#supply-chain">Supply Chain</a>
         <a href="Industries.html#media">Media</a>
+        <a href="Industries.html#medical">Medical</a>
         <a href="Industries.html#bfsi">Banking Finance and Insurance</a>
         <a href="Industries.html#travel-vacation">Travel and Vacation</a>
         <a href="Industries.html#vehicle-rental">Vehicle Rental</a>
