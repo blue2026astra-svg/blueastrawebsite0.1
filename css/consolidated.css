@@ -202,14 +202,6 @@ body[data-page="industries"] .hero p {
   padding-left: 0 !important;
 }
 
-body[data-page="home"] .title-line,
-body[data-page="industries"] .title-line {
-  color: #25a4a4 !important;
-  font-weight: 700;
-  font-size: 1.22rem !important;
-  letter-spacing: 0.01em;
-}
-
 body[data-page="home"] .two-col,
 body[data-page="industries"] .two-col {
   align-items: stretch;
@@ -227,7 +219,7 @@ body[data-page="industries"] .two-col .col img,
 body[data-page="home"] .section img,
 body[data-page="industries"] .section img {
   width: 100% !important;
-  max-width: 540px !important;
+  max-width: 900px !important;
   height: 320px !important;
   object-fit: cover !important;
   border-radius: 12px !important;
