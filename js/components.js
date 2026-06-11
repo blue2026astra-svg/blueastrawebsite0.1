@@ -4,7 +4,7 @@
   var headerHTML = `
 <header>
   <div class="logo">
-    <img src="images/black_orange_tree.png" alt="Blue Astra Logo">
+    <img src="https://tmkqegfxqdhroctafvem.supabase.co/storage/v1/object/public/videos-images-blueastra/black_orange_tree.webp" alt="Blue Astra Logo">
     <div class="logo-divider"></div>
     <div class="logo-text">
       <span>Blue Astra</span>
@@ -263,9 +263,16 @@
     }
   }
 
+  function enableImageLazyLoading() {
+    document.querySelectorAll('img:not([loading])').forEach(function (img) {
+      img.setAttribute('loading', 'lazy');
+    });
+  }
+
   inject('site-header', headerHTML);
   inject('site-footer', footerHTML);
   normalizeContentBlocks();
+  enableImageLazyLoading();
 
   loadJquery(function ($) {
     if ($) {
